@@ -2,15 +2,20 @@ class Board
   attr_accessor :cups
 
   def initialize(name1, name2)
-    @cups = Array.new(14) {Array.new(4, :stone)}
+    @cups = Array.new(14) {Array.new(4)}
     @cups[6], @cups[13] = [], []
+    self.place_stones
   end
 
   def place_stones
     # helper method to #initialize every non-store cup with four stones each
+    @cups.map! do |cup| 
+      cup.map! { :stone }
+    end
   end
 
   def valid_move?(start_pos)
+
   end
 
   def make_move(start_pos, current_player_name)
