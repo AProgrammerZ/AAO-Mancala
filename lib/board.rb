@@ -2,6 +2,8 @@ class Board
   attr_accessor :cups
 
   def initialize(name1, name2)
+    @cups = Array.new(14) {Array.new(4, :stone)}
+    @cups[6], @cups[13] = [], []
   end
 
   def place_stones
